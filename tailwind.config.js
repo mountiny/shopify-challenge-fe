@@ -5,6 +5,9 @@ module.exports = {
       maxWidth: {
         '8xl': '1920px'
       },
+      transitionTimingFunction: {
+        'my-curve': 'cubic-bezier(0.22, 0.61, 0.36, 1)',
+      },
       colors: {
         primary: 'var(--primary)',
         'primary-2': 'var(--primary-2)',
