@@ -1,29 +1,9 @@
-# Tailwind CSS example
+# Shopify Frontend developer Code Challenge - Vít Horáček
 
-This is an example of using [Tailwind CSS](https://tailwindcss.com) in a Next.js project.
+I have decided to use Next.js and their provided [TailwindCSS starter](https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss)
 
-## Deploy your own
+I have around half year of experience with making Next.js applications as a freelancer, I have really come to love the integration they provide with Vercel and the ease of use of this tech stack. I recommned anyone to try it out just because of its great Developer Experience.
 
-Deploy the example using [Vercel](https://vercel.com):
+For most of the styling, I have chosen TailwindCSS 2.0. I have used this solution in couple of my previous projects and it was the most convenient solution for styles I have come across yet. It is unopiniated yet it is mostly written dierctly in the js/jsx files so I do not have to switch between SCSS files of CSS modules. At the same time, it is easy to add more complex animations or solutions required by the project.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-This example is a basic starting point for using [Tailwind CSS](https://tailwindcss.com) with Next.js. It includes the following [PostCSS](https://github.com/postcss/postcss) plugins:
-
-- [postcss-preset-env](https://preset-env.cssdb.org/) - Adds stage 2+ features and autoprefixes
-
-To control the generated stylesheet's filesize, this example uses Tailwind CSS' [`purge` option](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) to remove unused CSS.
+For fetching from the API, I will use SWR library together with Axios library which I believe makes this rehydration very straightforward.
