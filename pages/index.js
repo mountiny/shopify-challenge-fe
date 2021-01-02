@@ -8,7 +8,7 @@ import Heart from'../components/icons/Heart';
 
 export default function Index() {
 
-  let API_URL = `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}`
+  let API_URL = `https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}`
 
   const [search, setSearch] = useState('')
   const [showBanner, setShowBanner] = useState(false)
