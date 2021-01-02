@@ -56,10 +56,10 @@ export default function Index() {
         key={mov.imdbID} 
         className={`w-full py-4 px-4 flex justify-between items-center ${key % 2 && 'bg-accents-1'}`}
         data-id={mov.imdbID}>
-        <div className="font-bold text-base">
-          {mov.Title}&nbsp;({mov.Year})
-        </div>
-        <div className="self-end">
+        <p className="font-bold text-base mr-2 break-words overflow-ellipsis overflow-hidden">
+          {mov.Title} ({mov.Year})
+        </p>
+        <div className="ml-2">
           {
             isNominated(mov.imdbID) ? (
               <button role="button" className="cursor-pointer px-2 py-2 bg-transparent" onClick={() => handleNominationDelete(mov.imdbID)}>
@@ -72,7 +72,7 @@ export default function Index() {
                 role="button"
                 onClick={() => handleMovieNomination(mov.imdbID)}
                 disabled={isNominated(mov.imdbID)}
-                className="rounded-lg text-sm bg-primary-2 font-medium text-primary px-4 py-2 transition-colors duration-200 hover:bg-pink"
+                className="rounded-lg text-xs md:text-sm bg-primary-2 font-medium text-primary px-2 md:px-4 py-2 transition-colors duration-200 hover:bg-pink"
                 >
                 Nominate
               </button>
@@ -96,10 +96,10 @@ export default function Index() {
         key={mov.imdbID} 
         className={`w-full py-4 px-4 flex justify-between items-center ${key % 2 && 'bg-accents-1'}`}
         data-id={mov.imdbID}>
-        <div className="font-bold text-base">
+        <div className="font-bold text-base mr-2 break-words overflow-ellipsis overflow-hidden">
           {mov.Title}&nbsp;({mov.Year})
         </div>
-        <div className="self-end">
+        <div className="ml-2">
           <button role="button" className="cursor-pointer px-2 py-2 bg-transparent" onClick={() => handleNominationDelete(mov.imdbID)}>
             <Heart 
               fill={'var(--pink)'}
@@ -145,7 +145,7 @@ export default function Index() {
 
 
   return (
-    <div>
+    <div className="pb-20">
 
       <Banner 
         show={showBanner} 
@@ -156,7 +156,7 @@ export default function Index() {
         </span>
       </Banner>
 
-      <div className='py-20'>
+      <div className='py-8 md:py-20'>
         <h2 className='text-1xl md:text-2xl lg:text-3xl font-bold text-center mb-6'>
           Shopify Frontend Developer Intern
         </h2>
@@ -179,7 +179,7 @@ export default function Index() {
               />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            <div className="flex flex-col ">
+            <div className="flex flex-col order-2 md:order-1">
               <div className="mb-4">
                 <h3 className="text-xl font-bold py-2">
                   {
@@ -225,7 +225,7 @@ export default function Index() {
                 }
               </div> 
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col order-1 md:order-2">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-bold py-2">
                   Nominations
@@ -234,7 +234,7 @@ export default function Index() {
                 <button
                   role="button"
                   onClick={() => setNominations([])}
-                  className="rounded-lg text-sm font-medium text-primary px-4 py-2 transition-colors duration-200 bg-pink hover:bg-red disabled:bg-accents-0 disabled:cursor-not-allowed "
+                  className="rounded-lg text-sm font-medium text-primary px-4 py-2 transition-colors duration-200 bg-pink hover:bg-red disabled:bg-accents-0 disabled:cursor-not-allowed disabled:opacity-90"
                   disabled={nominations.length === 0}
                   >
                   Remove all
