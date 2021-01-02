@@ -2,7 +2,7 @@
   @apply inline-flex text-center items-center leading-7;
 
   & span {
-    @apply bg-accents-6 rounded-full h-4 w-4;
+    @apply bg-accents-6 rounded-full h-3 w-3;
     animation-name: blink;
     animation-duration: 1.4s;
     animation-iteration-count: infinite;

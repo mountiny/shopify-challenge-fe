@@ -62,11 +62,11 @@ export default function Index() {
         <div className="self-end">
           {
             isNominated(mov.imdbID) ? (
-              <div className="cursor-pointer px-2 py-2 bg-transparent" onClick={() => handleNominationDelete(mov.imdbID)}>
+              <button role="button" className="cursor-pointer px-2 py-2 bg-transparent" onClick={() => handleNominationDelete(mov.imdbID)}>
                 <Heart 
                   fill={'var(--pink)'}
                   />
-              </div>
+              </button>
             ) : (
               <button
                 role="button"
@@ -100,21 +100,11 @@ export default function Index() {
           {mov.Title}&nbsp;({mov.Year})
         </div>
         <div className="self-end">
-
-          <div className="cursor-pointer px-2 py-2 bg-transparent" onClick={() => handleNominationDelete(mov.imdbID)}>
+          <button role="button" className="cursor-pointer px-2 py-2 bg-transparent" onClick={() => handleNominationDelete(mov.imdbID)}>
             <Heart 
               fill={'var(--pink)'}
               />
-          </div>
-          
-          {/* <button
-            role="button"
-            onClick={() => handleMovieNomination(mov.imdbID)}
-            disabled={isNominated(mov.imdbID)}
-            className="rounded-lg text-sm bg-primary-2 text-primary px-4 py-2 transition-colors duration-200 hover:bg-hover"
-            >
-            Nominate
-          </button> */}
+          </button>
         </div>
       </div>
     ))
@@ -162,7 +152,7 @@ export default function Index() {
         onClick={() => setShowBanner(false)}>
         You have used all 5 of your nominations!<br />
         <span className="text-xs pt-4">
-          You can remove some nomination by clicking on the heart.
+          You can remove a nomination by clicking on the heart.
         </span>
       </Banner>
 
@@ -176,7 +166,7 @@ export default function Index() {
 
         <div className='w-full mx-auto px-4 max-w-4xl mt-16'>
           <div className='w-full flex flex-col items-start'>
-            <label htmlFor='search' className='mb-4 text-xl font-bold'>Movie title</label>
+            <label htmlFor='search' className='mb-6 text-xl font-bold'>Movie title</label>
             <input 
               type='text'
               name='search'
@@ -188,20 +178,22 @@ export default function Index() {
               onChange={({target}) => setSearch(target.value)}
               />
           </div>
-          <div className="grid grid-cols-2 gap-6 mt-6">
-            <div className="flex flex-col">
-              <h3 className="text-xl font-bold mb-4">
-                {
-                  search === '' ? (
-                    "Type in the box above"
-                  ) : (
-                    <>
-                      Results for "{search}"
-                    </>
-                  )
-                }
-                
-              </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <div className="flex flex-col ">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold py-2">
+                  {
+                    search === '' ? (
+                      "Type in the box above"
+                    ) : (
+                      <>
+                        Results for "{search}"
+                      </>
+                    )
+                  }
+                  
+                </h3>
+              </div>
               <div className="border-2 border-white rounded-lg bg-accents-0">
                 {
                   isValidating ? (
@@ -234,9 +226,21 @@ export default function Index() {
               </div> 
             </div>
             <div className="flex flex-col">
-              <h3 className="text-xl font-bold mb-4">
-                Nominations
-              </h3>
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-bold py-2">
+                  Nominations
+                </h3>
+                
+                <button
+                  role="button"
+                  onClick={() => setNominations([])}
+                  className="rounded-lg text-sm font-medium text-primary px-4 py-2 transition-colors duration-200 bg-pink hover:bg-red disabled:bg-accents-0 disabled:cursor-not-allowed "
+                  disabled={nominations.length === 0}
+                  >
+                  Remove all
+                </button>
+                  
+              </div>
               <div className="border-2 border-white rounded-lg bg-accents-0">
                 {
                   nominations.length === 0 ? (

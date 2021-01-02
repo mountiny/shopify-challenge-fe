@@ -51,5 +51,11 @@ module.exports = {
         widest: '0.3em'
       }
     }
-  }
+  },
+  variants: {
+    extend: {
+      backgroundColor: ['disabled'],
+      cursor: ['disabled']
+    }
+  },
 };
