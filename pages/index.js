@@ -6,7 +6,6 @@ import useSWR from 'swr';
 import LoadingDots from '../components/LoadingDots';
 import Heart from'../components/icons/Heart';
 
-
 export default function Index() {
 
   let API_URL = `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}`
@@ -18,9 +17,6 @@ export default function Index() {
   const { nominations, setNominations } = useNominations()
 
   const MOVIES_ONLY = true
-  const INCLUDE_YEAR = true
-
-  console.log('Nominations: ', nominations)
   
   const {
     data: {data: movies} = {},
@@ -44,7 +40,6 @@ export default function Index() {
 
   }, [showBanner])
   
-  console.log('Data: ', movies)
 
   // Method to generate the list of movies
   const listMovies = () => {
